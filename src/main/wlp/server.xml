@@ -1,5 +1,7 @@
 <server>
 
+	<keyStore id="defaultKeyStore" password="keyStorePwd"/>
+
     <featureManager>
         <feature>webProfile-7.0</feature>
     </featureManager>
@@ -10,6 +12,6 @@
         <tcpOptions soReuseAddr="true"/>
     </httpEndpoint>
 
-    <application name="GetStartedJava" context-root="/GetStartedJava" location="${appLocation}" type="war"/>
+    <application name="WAT" context-root="/wat" location="${appLocation}" type="war" autoStart="false" id="WAT"/>
 
 </server>
