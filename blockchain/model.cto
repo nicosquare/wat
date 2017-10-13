@@ -1,0 +1,117 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+namespace com.biz
+
+/**
+ * A User participant
+ */
+abstract participant User identified by email {
+  o String email
+  o String firstName
+  o String lastName
+}
+
+/**
+ * A HomeOwner participant
+ */
+participant HomeOwner extends User {
+    --> House home
+}
+
+/**
+ * A CompanySupervisor participant
+ */
+participant CompanySupervisor extends User {
+    --> Company provider
+}
+
+/**
+ * A House asset. A House is related to a list of Rooms
+ */
+asset House identified by address {
+    o String address
+    o String postcode
+    o Double storedPower
+    o Double availablePower
+    --> HomeOwner owner
+    --> Room[] rooms
+    --> PowerProfile[] profiles
+}
+
+/**
+ * A Company asset. A Company is related to a list of Houses
+ */
+asset Company identified by address {
+    o String address
+    o String postcode
+    o Double availablePower
+    --> CompanySupervisor supervisor
+    --> House[] houses	
+    --> PowerProfile[] profiles
+}
+
+/**
+ * A Room asset, which is related to a House
+ */
+asset Room identified by roomId {
+    o String roomId
+    o Double periodConsumption
+    --> House location
+}
+
+/**
+ * A Business asset which is owned by a Farmer, is related to a list of fields
+ * and has a list of incoming animals.
+ */
+asset PowerProfile identified by idProfile {
+     o String idProfile
+     o String dbKey
+     o String period
+     --> House location
+}
+
+/**
+ * A transaction type for Power movements between Houses
+ */
+transaction PowerTransfer {
+    o String[] logs optional
+    o Double powerAmount
+    --> House from
+    --> House to
+}
+
+/**
+ * A transaction type for Power movements from Company to House
+ */
+transaction MonthlyPowerAssignment {
+    o String[] logs optional
+    o Double powerAmount
+    --> Company from
+    --> House to
+}
+
+
+/**
+ * A transaction type for Profile sending from House to Company
+ */
+transaction ProfileSend {
+  o String[] logs optional
+    --> House from
+    --> Company to
+    --> PowerProfile profile
+}
+
+transaction SetupDemo  {
+}

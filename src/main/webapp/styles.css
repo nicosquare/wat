@@ -1,3 +1,10 @@
+*
+{
+   font-size: 1em !important;
+   color: #000 !important;
+   font-family: Ubuntu;
+}
+
 .helloInput {
   width: 200px;
 }
