@@ -43,7 +43,7 @@ public class VisitorAPI extends Application {
    * Gets all Visitors.
    * REST API example:
    * <code>
-   * GET http://localhost:9080/GetStartedJava/api/visitors
+   * GET http://localhost:9080/WAT/api/visitors
    * </code>
    * 
    * Response:
@@ -76,7 +76,7 @@ public class VisitorAPI extends Application {
      * 
      * REST API example:
      * <code>
-     * POST http://localhost:9080/GetStartedJava/api/visitors
+     * POST http://localhost:9080/WAT/api/visitors
      * <code>
      * POST Body:
      * <code>
