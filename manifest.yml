@@ -1,0 +1,7 @@
+---
+applications:
+ - name: wat
+   random-route: true
+   path: target/wat.war
+   memory: 256M
+   instances: 1
