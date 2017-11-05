@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	var main_zones = [ false, false, false ];
-
+	
 	$("#zone-1").click(function() {
 
 		if (!main_zones[0]) {
