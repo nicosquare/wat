@@ -1,6 +1,6 @@
 /* General rules */
 
-#zone-1, #zone-2, #zone-3, #house-alt, #button-send { cursor: pointer; }
+#zone-1, #zone-2, #zone-3, .button-img { cursor: pointer; }
 
 .bg-black { background-color: blue;}
 
