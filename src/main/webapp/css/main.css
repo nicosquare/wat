@@ -1,0 +1,10 @@
+/* General rules */
+
+#zone-1, #zone-2, #zone-3 { cursor: pointer; }
+
+.bg-black { background-color: black;}
+
+.house { 
+	position: relative;
+	width: 80%;
+}
