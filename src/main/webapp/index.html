@@ -61,18 +61,22 @@
 	</header>
 
 	<!-- Demo -->
-	<section id="demo" class="services bg-black text-white">
+	<section id="demo" class="services bg-black text-white" style="width:100%"> 
 		<div class="container text-center">
 			<h2>DEMO</h2>
 			<p class="lead">This is the demo of WAT</p>
 		</div>
 
-		<div class="container row text-center">
+		<div class="container row text-center" style="display: table; margin: 0 auto;">
 
-			<div class="col-lg-10 mx-auto">
+			<div class="col-lg-offset-2 col-lg-12 mx-auto">
+			
+				<img id="button-send" class="button-send"
+					src="img/send_energy_off.png" width="130" height="130" alt="house-1">
+			
 				<img id="house-principal" class="house-principal"
-				src="img/house_0_0_0.png" width="260" height="130" alt="house-1"
-				usemap="#house-zones" style="float:left;">
+					src="img/house_0_0_0.png" width="260" height="130" alt="house-1"
+					usemap="#house-zones">
 
 				<map name="house-zones">
 					<area id="zone-1" name="zone-1" shape="poly"
@@ -83,6 +87,22 @@
 						coords="130,130,194,0,260,130" alt="zone-3">
 				</map>
 			</div>
+
+			<div class="col-lg-12 mx-auto"  style="display: table; margin: 0 auto;">
+				<img id="house-alt" class="house-alt" src="img/house_alt_off.png"
+					width="260" height="130" alt="house-1" style="float: left;">
+			</div>
+			
+			<div class="col-lg-12 mx-auto"  style="display: table; margin: 0 auto;">
+				<img id="house-alt" class="house-alt" src="img/house_alt_off.png"
+					width="260" height="130" alt="house-1"">
+			</div>
+			
+			<div class="col-lg-12 mx-auto"  style="display: table; margin: 0 auto;">
+				<img id="house-alt" class="house-alt" src="img/house_alt_off.png"
+					width="260" height="130" alt="house-1" style="float: right;">
+			</div>
+
 		</div>
 
 		<!-- /.container -->

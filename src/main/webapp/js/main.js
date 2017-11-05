@@ -126,5 +126,20 @@ $( document ).ready(function() {
 		
 	})
 	
+	$("#button-send").click(function(){
+		
+		$("#button-send").attr("src","img/send_energy_on.png");
+		$("#house-alt").attr("src","img/house_alt_on.png");
+		
+		var timer = setTimeout(function(){ 
+			
+			$("#button-send").attr("src","img/send_energy_off.png");
+			$("#house-alt").attr("src","img/house_alt_off.png");
+		
+		}, 800); 
+		
+		
+	})
+	
 	
 });

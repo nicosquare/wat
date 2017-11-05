@@ -1,8 +1,8 @@
 /* General rules */
 
-#zone-1, #zone-2, #zone-3 { cursor: pointer; }
+#zone-1, #zone-2, #zone-3, #house-alt, #button-send { cursor: pointer; }
 
-.bg-black { background-color: black;}
+.bg-black { background-color: blue;}
 
 .house { 
 	position: relative;
