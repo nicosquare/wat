@@ -1,6 +1,30 @@
 $(document).ready(function() {
 
+	// Energy consumumption by zones (Boolean) 
+	
 	var main_zones = [ false, false, false ];
+	
+	
+	// Energy consumption bars initialization
+	
+	var energy_bar_z1 = new ProgressBar.Line('#energy-bar-z1', {
+		strokeWidth: 10,
+		color: '#eef442'
+	});
+	
+	var energy_bar_z2 = new ProgressBar.Line('#energy-bar-z2', {
+		strokeWidth: 10,
+		color: '#eef442'
+	});
+	
+	var energy_bar_z3 = new ProgressBar.Line('#energy-bar-z3', {
+		strokeWidth: 10,
+		color: '#eef442'
+	});
+	
+	energy_bar_z1.animate(0.4);
+	energy_bar_z2.animate(0.15);
+	energy_bar_z3.animate(0.2);
 	
 	$("#zone-1").click(function() {
 
