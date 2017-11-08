@@ -4,7 +4,98 @@
 
 .bg-black { background-color: blue;}
 
-.house { 
-	position: relative;
-	width: 80%;
+#container-info{
+    background: no-repeat url('../img/background.jpg') 50% / 100%;
+    position:relative
+}
+#background-info{
+    vertical-align: top;
+    width: 100%; /* max width */
+    opacity: 0;  /* make it transparent */
+    z-index: 1;
+}
+
+.floating-block {
+   	float: left;
+   	position: absolute;
+   	z-index: 1000;
+   	padding: 5px;
+   	color: #FFFFFF;
+   	font-weight: bold;
+	display: inline-block;
+}
+
+#container-house, #container-logo{
+	width:100%;
+}
+
+/* Button configurations*/
+
+.house-principal{
+	width: 30%;
+	margin-left: 35%;
+	margin-top: 57%;
+}
+
+.house-small{
+	width: 20%;
+	margin-left: 40%;
+}
+
+.logo{
+	width: 36%;
+	margin-left: 32%;
+}
+
+#button-send-energy, #button-send-ibm, #button-return{
+	width: 75%;
+}
+
+/* Floating block configurations*/
+
+.block-logo{
+	top: 4%;
+}
+
+.block-house-alt {
+	top: 39.2%;
+}
+
+.block-butt-send-energy {
+	top: 30%;
+	left: 5%;
+}
+
+.block-butt-send-data {
+	top: 79%;
+	right: 33%;
+}
+
+.block-butt-return-energy {
+	top: 75.8%;
+	left: 8%;
+}
+
+.block-bar-z1{
+	width: 30%;
+	top: 13.7%;
+	left: 20.8%;
+}
+
+.block-bar-z2{
+	width: 30%;
+	top: 12.5%;
+	left: 63.5%;	
+}
+
+.block-bar-z3{
+	width: 30%;
+	top: 15%;
+	left: 64%;
+}
+
+.block-bars-houses{
+	width: 30%;
+	top: 10%;
+	left: 10%;
 }

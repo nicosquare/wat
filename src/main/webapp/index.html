@@ -60,128 +60,166 @@
 		</div>
 	</header>
 
+
 	<!-- Demo -->
+
+
 	<section id="demo" class="services bg-black text-white"
 		style="width: 100%">
-		<div class="container text-center">
-			<h2>DEMO</h2>
-			<p class="lead">This is the demo of WAT</p>
-		</div>
 
-		<div class="container row text-center"
-			style="display: table; margin: 0 auto;">
+		<div id="container-info">
 
-			<!-- Messages space -->
-			<div class="col-lg-offset-2 col-lg-12 mx-auto"
-				style="display: table; margin: 0 auto;">
+			<!-- Logo -->
+			<div id="container-logo" class="floating-block block-logo">
 
-				<div id="info-z3" class="col-lg-2" style="float: right; background: black;">
-				
-					<h2>ZONE 3</h2>
-					<p class="lead">Energy consumption</p>
+				<img id="logo" class="logo"
+					src="img/wat_on.png" alt="house-1"> 
 
-					<div id="energy-bar-z3" name="energy-z3"></div>
+			</div>
 
-					<p class="lead">20%</p>
-				
-				</div>
-				
-				<div id="info-z2" class="col-lg-2" style="float: right; background: black;">
-				
-					<h2>ZONE 2</h2>
-					<p class="lead">Energy consumption</p>
-
-					<div id="energy-bar-z2" name="energy-z2"></div>
-
-					<p class="lead">15%</p>
-				
-				</div>
-
-				<div id="info-z1" class="col-lg-2" style="float: right; background: black;">
-
-					<h2>ZONE 1</h2>
-					<p class="lead">Energy consumption</p>
-
-					<div id="energy-bar-z1" name="energy-z1"></div>
-
-					<p class="lead">40%</p>
-
-				</div>
-	
+			<!-- Z1 -->
+			<div id="info-z1" class="floating-block block-bar-z1">
+			
+				<div id="energy-bar-z1" name="energy-z1"></div>
+				<p id="text-bar-z1" class="lead">20%</p>
+			
+			</div>
+			
+			<!-- Z2 -->
+			<div id="info-z2" class="floating-block block-bar-z2">
+			
+				<div id="energy-bar-z2" name="energy-z2"></div>
+				<p id="text-bar-z2" class="lead">20%</p>
+			
+			</div>
+			
+			<!-- Z3 -->
+			<div id="info-z3" class="floating-block block-bar-z3">
+			
+				<div id="energy-bar-z3" name="energy-z3"></div>
+				<p id="text-bar-z3" class="lead">20%</p>
+			
 			</div>
 
 			<!-- Main house -->
-			<div class="col-lg-offset-2 col-lg-12 mx-auto">
+			<div id="container-house" class="floating-block first-block">
 
-				<img id="button-send" class="button-img"
-					src="img/send_energy_off.png" width="130" height="130"
-					alt="house-1"> <img id="house-principal"
-					class="house-principal" src="img/house_0_0_0.png" width="260"
-					height="130 est" alt="house-1" usemap="#house-zones">
+
+				<img id="house-principal" class="house-principal"
+					src="img/house_0_0_0.png" alt="house-1" usemap="#house-zones">
 
 				<map name="house-zones">
-					<area id="zone-1" name="zone-1" shape="poly"
-						coords="0,130,68,0,130,130" alt="zone-1">
-					<area id="zone-2" name="zone-2" shape="poly"
-						coords="68,0,194,0,130,130" alt="zone-2">
-					<area id="zone-3" name="zone-3" shape="poly"
-						coords="130,130,194,0,260,130" alt="zone-3">
+					<area id="zone-1" shape="poly"
+						coords="0,255,181,360,238,325,238,251,214,239,214,226,249,206,249,201,283,184,218,111,319,55,378,47,463,154,463,68,363,5,294,0,121,59,2,168"
+						,
+						alt="zone-1">
+					<area id="zone-2" shape="poly"
+						coords="223,114,318,57,377,49,510,185,483,199,483,201,479,233,428,234,377,275,254,205,287,180"
+						alt="zone-2">
+					<area id="zone-3" shape="poly"
+						coords="241,325,404,420,573,324,573,256,483,214,486,235,430,237,379,281,252,209,217,235,241,251"
+						alt="zone-3">
 				</map>
 
+			</div>
+
+			<!-- Send energy button -->
+			<div id="container-butt-send-energy" class="floating-block block-butt-send-energy">
+
+				<img id="button-send-energy" class="button-img"
+					src="img/send_energy_off.png" alt="house-1"> 
 
 			</div>
 
-			<!-- House alternative -->
-			<div class="col-lg-12 mx-auto"
-				style="display: table; margin: 0 auto;">
+			<!-- Energy sliders -->
+			<div id="info-houses" class="floating-block block-bars-houses">
+			
+				<div id="energy-bar-house-p" name="energy-bar-house-p"></div>
+				<p id="text-bar-house-p" class="lead">100 W</p>
 				
-				<h2>Prediction:</h2>
-				<p class="lead">Monday</p>
-				<p class="lead">Zone 1: 9 KWh</p>
-				<p class="lead">Zone 2: 10 KWh</p>
-				<p class="lead">Zone 3: 10 KWh</p>
-
+				<div id="energy-bar-house-alt" name="energy-bar-house-alt"></div>
+				<p id="text-bar-house-alt" class="lead">100 W</p>
+			
 			</div>
 
 			<!-- House alternative -->
-			<div class="col-lg-12 mx-auto"
-				style="display: table; margin: 0 auto;">
-				<img id="house-alt" class="button-img" src="img/house_alt_off.png"
-					width="260" height="130" alt="house-1" style="float: left;">
+			<div id="container-house" class="floating-block block-house-alt">
+
+				<img id="house-alt" class="house-small" src="img/house_alt_off.png"
+					alt="house-1" style="float: left;"> 
+
+			</div>
+
+			<!-- Send data button -->
+			<div id="container-butt-send-data" class="floating-block block-butt-send-data">
 
 				<img id="button-send-ibm" class="button-img"
-					src="img/send_to_ibm_off.png" width="130" height="130"
-					alt="house-1" style="float: left;">
+					src="img/send_to_ibm_off.png" alt="house-1"> 
+
+			</div>
+			
+			<!-- Return energy button -->
+			<div id="container-butt-return-energy" class="floating-block block-butt-return-energy">
+
+				<img id="button-return" class="button-img"
+					src="img/return_off.png" alt="house-1"> 
 
 			</div>
 
-			<!-- IBM -->
-			<div class="col-lg-12 mx-auto"
-				style="display: table; margin: 0 auto;">
-				<img id="ibm" class="ibm" src="img/ibm.png" width="130" height="130"
-					alt="house-1""> <img id="button-send-comp" class="button-img"
-					src="img/send_to_ibm_off.png" width="130" height="130"
-					alt="house-1">
 
-			</div>
-
-			<!-- Company -->
-			<div class="col-lg-12 mx-auto"
-				style="display: table; margin: 0 auto;">
-
-
-				<img id="house-alt" class="house-alt" src="img/house_alt_off.png"
-					width="260" height="130" alt="house-1" style="float: right;">
-
-
-				<img id="button-return" class="button-img" src="img/return_off.png"
-					width="130" height="130" alt="house-1" style="float: right;">
-
-			</div>
+			<img id="background-info" name="background-info"
+				src="img/background.jpg">
 
 		</div>
 
-		<!-- /.container -->
+<!-- 		<div class="container row text-center" -->
+<!-- 			style="display: table; margin: 0 auto;"> -->
+
+<!-- 			<!-- Messages space --> 
+<!-- 			<div class="col-lg-offset-2 col-lg-12 mx-auto" -->
+<!-- 				style="display: table; margin: 0 auto;"> -->
+
+<!-- 				<div id="info-z3" class="col-lg-2" -->
+<!-- 					style="float: right; background: black;"> -->
+
+<!-- 					<h2>ZONE 3</h2> -->
+<!-- 					<p class="lead">Energy consumption</p> -->
+
+<!-- 					<div id="energy-bar-z3" name="energy-z3"></div> -->
+
+<!-- 					<p class="lead">20%</p> -->
+
+<!-- 				</div> -->
+
+<!-- 				<div id="info-z2" class="col-lg-2" -->
+<!-- 					style="float: right; background: black;"> -->
+
+<!-- 					<h2>ZONE 2</h2> -->
+<!-- 					<p class="lead">Energy consumption</p> -->
+
+<!-- 					<div id="energy-bar-z2" name="energy-z2"></div> -->
+
+<!-- 					<p class="lead">15%</p> -->
+
+<!-- 				</div> -->
+
+<!-- 				<div id="info-z1" class="col-lg-2" -->
+<!-- 					style="float: right; background: black;"> -->
+
+<!-- 					<h2>ZONE 1</h2> -->
+<!-- 					<p class="lead">Energy consumption</p> -->
+
+<!-- 					<div id="energy-bar-z1" name="energy-z1"></div> -->
+
+<!-- 					<p class="lead">40%</p> -->
+
+<!-- 				</div> -->
+
+<!-- 			</div> -->
+
+<!-- 		</div> -->
+
+	<!-- /.container -->
 	</section>
 
 	<!-- About -->
@@ -391,6 +429,7 @@
 	<script src="js/stylish-portfolio.js"></script>
 
 	<!-- Custom functions -->
+	<script src="js/imageMapResizer.min.js"></script>
 	<script src="js/progressbar.min.js"></script>
 	<script src="js/main.js"></script>
 

@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+	// Initialize the demo
+	init();
+	
 	// Energy consumumption by zones (Boolean) 
 	
 	var main_zones = [ false, false, false ];
@@ -8,23 +11,36 @@ $(document).ready(function() {
 	// Energy consumption bars initialization
 	
 	var energy_bar_z1 = new ProgressBar.Line('#energy-bar-z1', {
-		strokeWidth: 10,
+		strokeWidth: 2,
 		color: '#eef442'
 	});
 	
 	var energy_bar_z2 = new ProgressBar.Line('#energy-bar-z2', {
-		strokeWidth: 10,
-		color: '#eef442'
+		strokeWidth: 2,
+		color: '#62a2a3'
 	});
 	
 	var energy_bar_z3 = new ProgressBar.Line('#energy-bar-z3', {
-		strokeWidth: 10,
+		strokeWidth: 2,
+		color: '#cfd3dc'
+	});
+	
+	var energy_bar_house_p = new ProgressBar.Line('#energy-bar-house-p', {
+		strokeWidth: 2,
+		color: '#eef442'
+	});
+	
+	var energy_bar_house_alt = new ProgressBar.Line('#energy-bar-house-alt', {
+		strokeWidth: 2,
 		color: '#eef442'
 	});
 	
 	energy_bar_z1.animate(0.4);
 	energy_bar_z2.animate(0.15);
 	energy_bar_z3.animate(0.2);
+	energy_bar_house_p.animate(0.5);
+	energy_bar_house_alt.animate(0.5);
+	// Energy animation of main house
 	
 	$("#zone-1").click(function() {
 
@@ -143,14 +159,14 @@ $(document).ready(function() {
 
 	})
 
-	$("#button-send").click(function() {
+	$("#button-send-energy").click(function() {
 
-		$("#button-send").attr("src", "img/send_energy_on.png");
+		$("#button-send-energy").attr("src", "img/send_energy_on.png");
 		$("#house-alt").attr("src", "img/house_alt_on.png");
 
 		var timer = setTimeout(function() {
 
-			$("#button-send").attr("src", "img/send_energy_off.png");
+			$("#button-send-energy").attr("src", "img/send_energy_off.png");
 			$("#house-alt").attr("src", "img/house_alt_off.png");
 
 		}, 800);
@@ -164,14 +180,8 @@ $(document).ready(function() {
 		var timer_1 = setTimeout(function() {
 
 			$("#button-send-ibm").attr("src", "img/send_to_ibm_off.png");
-			$("#button-send-comp").attr("src", "img/send_to_ibm_on.png");
 
 		}, 800);
-
-		var timer_2 = setTimeout(function() {
-			$("#button-send-comp").attr("src", "img/send_to_ibm_off.png");
-
-		}, 1600);
 
 	})
 	
@@ -188,3 +198,9 @@ $(document).ready(function() {
 	})
 
 });
+
+function init(){
+	
+	// Init the plugin for Map resizing
+	$('map').imageMapResize();
+}
