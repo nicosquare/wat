@@ -5,3 +5,18 @@ applications:
    path: target/wat.war
    memory: 256M
    instances: 1
+image: nmcuadradoa/wat:latest
+manifests:
+  - image: nmcuadradoa/wat:latest
+    platform:
+      architecture: x86
+      os: linux
+  - image: arm/nmcuadradoa/wat/:latest
+    platform:
+      architecture: arm
+      os: linux
+  - image: amd/nmcuadradoa/wat:latest
+    platform:
+      architecture: amd64
+      os: linux
+ 

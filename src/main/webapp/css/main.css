@@ -2,7 +2,31 @@
 
 #zone-1, #zone-2, #zone-3, .button-img { cursor: pointer; }
 
-.bg-black { background-color: blue;}
+.bg-black { background-color: #111312;}
+
+.z1{
+	color: #e7cb21;
+}
+
+.z2{
+	color: #51cca1;
+}
+
+.z3{
+	color: #b0c5cb;
+}
+
+.lato-font{
+    font-family: "Lato";
+}
+
+.helvetica-font{
+	font-weight: normal;
+    font-size: medium;
+	font-family: Helvetica Neue,sans-serif;
+}
+
+/* Container rules*/
 
 #container-info{
     background: no-repeat url('../img/background.jpg') 50% / 100%;
@@ -29,12 +53,72 @@
 	width:100%;
 }
 
+#block-text-under-house{    
+	top: 12.8%;
+    left: 35%;
+    width: 30%;
+    color: #fefefe;
+}
+
+#block-text-harvester-1{    
+	top: 18.5%;
+    left: 59%;
+    color: #fefefe;
+}
+
+
+#block-text-transaction{    
+	top: 26.5%;
+	left: 56%;
+    color: #fefefe;
+}
+
+#block-text-harvester-2{    
+	top: 43%;
+    left: 59%;
+    color: #fefefe;
+}
+
+#block-text-profiles{    
+	top: 69%;
+    left: 59%;
+    color: #fefefe;
+}
+
+#block-text-return{    
+	top: 78%;
+    left: 15%;
+    color: #fefefe;
+}
+
+
+#block-text-company{    
+	top: 95%;
+    left: 30%;
+    width: 40%;
+    color: #fefefe;
+}
+
+#block-prediction{
+	top: 11%;
+	right: 9%;
+	color: #fefefe;
+	width: 13%;	
+}
+
+#block-energy-houses{
+	top: 29.8%;
+	left: 24%;
+	color: #fefefe;
+	width: 9%;	
+}
+
 /* Button configurations*/
 
 .house-principal{
 	width: 30%;
 	margin-left: 35%;
-	margin-top: 57%;
+	margin-top: 19%;
 }
 
 .house-small{
@@ -55,47 +139,93 @@
 
 .block-logo{
 	top: 4%;
+	visibility: hidden;
 }
 
 .block-house-alt {
-	top: 39.2%;
+	top: 32.3%;
 }
 
 .block-butt-send-energy {
-	top: 30%;
-	left: 5%;
+	top: 25.5%;
+	left: 4%;
 }
 
 .block-butt-send-data {
-	top: 79%;
+	top: 77%;
 	right: 33%;
 }
 
 .block-butt-return-energy {
-	top: 75.8%;
+	top: 78%;
 	left: 8%;
 }
 
 .block-bar-z1{
-	width: 30%;
-	top: 13.7%;
+	width: 12.5%;
+	top: 4%;
 	left: 20.8%;
 }
 
 .block-bar-z2{
-	width: 30%;
-	top: 12.5%;
+	width: 12.5%;
+	top: 2.7%;
 	left: 63.5%;	
 }
 
 .block-bar-z3{
-	width: 30%;
-	top: 15%;
-	left: 64%;
+	width: 12.5%;
+	top: 5.8%;
+	left: 67.8%;
 }
 
 .block-bars-houses{
-	width: 30%;
-	top: 10%;
-	left: 10%;
+	width: 17%;
+	top: 26%;
+	left: 20%;
+	transform: rotate(90deg);
+}
+
+/* Text rules*/
+
+#text-under-house{
+	font-weight: bold;
+	font-size: x-large;
+	text-align: center;
+}
+
+#text-harvester-1{
+	font-weight: bold;
+	font-size: x-large;
+	text-align: left;
+}
+
+#text-transaction{
+	font-weight: bold;
+	font-size: x-large;
+	text-align: left;
+}
+
+#text-harvester-2{
+	font-weight: bold;
+	font-size: x-large;
+	text-align: left;
+}
+
+#text-profiles{
+	font-weight: bold;
+	font-size: x-large;
+	text-align: left;
+}
+
+#text-return{
+	font-weight: bold;
+	font-size: x-large;
+	text-align: left;
+}
+
+#text-company{
+	font-weight: bold;
+	font-size: xx-large;
+	text-align: center;
 }

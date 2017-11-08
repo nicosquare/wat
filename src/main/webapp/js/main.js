@@ -1,6 +1,13 @@
 $(document).ready(function() {
 
+	// Global variables
+	
+	var prediction_zones = [0,0,0]; //KW - Z1 - Z2 - Z3
+	var consumption_zones = [0,0,0]; //KW - Z1 - Z2 - Z3
+	var stored_power = [150,30]; //KW - H1 - H2 
+	
 	// Initialize the demo
+	
 	init();
 	
 	// Energy consumumption by zones (Boolean) 
@@ -11,35 +18,36 @@ $(document).ready(function() {
 	// Energy consumption bars initialization
 	
 	var energy_bar_z1 = new ProgressBar.Line('#energy-bar-z1', {
-		strokeWidth: 2,
+		strokeWidth: 3,
 		color: '#eef442'
 	});
 	
 	var energy_bar_z2 = new ProgressBar.Line('#energy-bar-z2', {
-		strokeWidth: 2,
+		strokeWidth: 3,
 		color: '#62a2a3'
 	});
 	
 	var energy_bar_z3 = new ProgressBar.Line('#energy-bar-z3', {
-		strokeWidth: 2,
+		strokeWidth: 3,
 		color: '#cfd3dc'
 	});
 	
 	var energy_bar_house_p = new ProgressBar.Line('#energy-bar-house-p', {
-		strokeWidth: 2,
+		strokeWidth: 12,
 		color: '#eef442'
 	});
 	
 	var energy_bar_house_alt = new ProgressBar.Line('#energy-bar-house-alt', {
-		strokeWidth: 2,
+		strokeWidth: 12,
 		color: '#eef442'
 	});
 	
-	energy_bar_z1.animate(0.4);
-	energy_bar_z2.animate(0.15);
-	energy_bar_z3.animate(0.2);
-	energy_bar_house_p.animate(0.5);
-	energy_bar_house_alt.animate(0.5);
+	energy_bar_z1.animate(1);
+	energy_bar_z2.animate(1);
+	energy_bar_z3.animate(1);
+	energy_bar_house_p.animate(1);
+	energy_bar_house_alt.animate(1);
+	
 	// Energy animation of main house
 	
 	$("#zone-1").click(function() {

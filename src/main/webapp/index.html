@@ -25,6 +25,9 @@
 <link href="css/stylish-portfolio.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
 
+<!--  Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
@@ -53,10 +56,8 @@
 	<!-- Header -->
 	<header class="header" id="top">
 		<div class="text-vertical-center">
-			<h1>Start Bootstrap</h1>
-			<h3>Free Bootstrap Themes &amp; Templates</h3>
-			<br> <a href="#about"
-				class="btn btn-dark btn-lg js-scroll-trigger">Find Out More</a>
+			<br> <a href="#container-info"
+				class="btn btn-dark btn-lg js-scroll-trigger">See how it works</a>
 		</div>
 	</header>
 
@@ -78,27 +79,35 @@
 			</div>
 
 			<!-- Z1 -->
-			<div id="info-z1" class="floating-block block-bar-z1">
+			<div id="info-z1" class="floating-block block-bar-z1 helvetica-font">
 			
 				<div id="energy-bar-z1" name="energy-z1"></div>
-				<p id="text-bar-z1" class="lead">20%</p>
+				<p id="text-bar-z1" class="z1">20%</p>
 			
 			</div>
 			
 			<!-- Z2 -->
-			<div id="info-z2" class="floating-block block-bar-z2">
+			<div id="info-z2" class="floating-block block-bar-z2 helvetica-font">
 			
 				<div id="energy-bar-z2" name="energy-z2"></div>
-				<p id="text-bar-z2" class="lead">20%</p>
+				<p id="text-bar-z2" class="z2">20%</p>
 			
 			</div>
 			
 			<!-- Z3 -->
-			<div id="info-z3" class="floating-block block-bar-z3">
+			<div id="info-z3" class="floating-block block-bar-z3 helvetica-font">
 			
 				<div id="energy-bar-z3" name="energy-z3"></div>
-				<p id="text-bar-z3" class="lead">20%</p>
+				<p id="text-bar-z3" class="z3">20%</p>
 			
+			</div>
+			
+			<!-- Info prediction -->
+			<div id="block-prediction" class="floating-block helvetica-font">
+				<p id="pred-time" class="" style="text-align: center;">00:00</p>
+				<p id="pred-z1" class="z1" style="text-align: right; margin-top: 10%;">0 %</p>
+				<p id="pred-z1" class="z2" style="text-align: right;">0 %</p>
+				<p id="pred-z1" class="z3" style="text-align: right;">0 %</p>
 			</div>
 
 			<!-- Main house -->
@@ -122,6 +131,29 @@
 				</map>
 
 			</div>
+			
+			<!-- Info under house -->
+			<div id="block-text-under-house" class="floating-block lato-font">
+				<p id="text-under-house" class="lead">INFORMATION ABOUT CONSUMPTION BY SECTOR</p>
+			</div>
+			
+			<!-- Harvester 1 title -->
+			<div id="block-text-harvester-1" class="floating-block lato-font">
+				<p id="text-harvester-1" class="lead">HARVESTER</p>
+				<p id="text_harvester-1-txt" class="helvetica-font">Gathers information about <br> energy consumption in <br> the place. </p>
+			</div>
+			
+			<!-- Transaction title -->
+			<div id="block-text-transaction" class="floating-block lato-font">
+				<p id="text-transaction" class="lead">ENERGY TRANSACTION</p>
+				<p id="text_harvester-1-txt" class="helvetica-font">A percentage of not used energy <br> could be transfered to <br> a house that needs it.</p>
+			</div>
+			
+			<!-- Harvester 2 title -->
+			<div id="block-text-harvester-2" class="floating-block lato-font">
+				<p id="text-harvester-1" class="lead">HARVESTER</p>
+				<p id="text_harvester-1-txt" class="helvetica-font">There is a harvester for each <br> house, learning about the consumption <br> of each connected device.</p>
+			</div>
 
 			<!-- Send energy button -->
 			<div id="container-butt-send-energy" class="floating-block block-butt-send-energy">
@@ -134,12 +166,17 @@
 			<!-- Energy sliders -->
 			<div id="info-houses" class="floating-block block-bars-houses">
 			
-				<div id="energy-bar-house-p" name="energy-bar-house-p"></div>
-				<p id="text-bar-house-p" class="lead">100 W</p>
-				
+				<div id="energy-bar-house-p" name="energy-bar-house-p"></div>	
+				<br>
+				<br>			
 				<div id="energy-bar-house-alt" name="energy-bar-house-alt"></div>
-				<p id="text-bar-house-alt" class="lead">100 W</p>
 			
+			</div>
+			
+			<!-- Info watts -->
+			<div id="block-energy-houses" class="floating-block helvetica-font">
+				<p id="energy-h1" style="float:left; width:50%; text-align: left;">100<br>KW</p>
+				<p id="energy-h2" style="float:right; width:50%;text-align: right;">0<br>KW</p>
 			</div>
 
 			<!-- House alternative -->
@@ -148,6 +185,12 @@
 				<img id="house-alt" class="house-small" src="img/house_alt_off.png"
 					alt="house-1" style="float: left;"> 
 
+			</div>
+			
+			<!-- Profiles title -->
+			<div id="block-text-profiles" class="floating-block lato-font">
+				<p id="text-profiles" class="lead">CONSUMPTION PROFILES</p>
+				<p id="text_harvester-1-txt" class="helvetica-font">With the help of IBM technologies <br> we profile the consumption behaviors. </p>
 			</div>
 
 			<!-- Send data button -->
@@ -158,12 +201,23 @@
 
 			</div>
 			
+			<!-- Return title -->
+			<div id="block-text-company" class="floating-block lato-font">
+				<p id="text-company" class="lead">WIDER LEVEL ANALYSIS</p>
+			</div>
+			
 			<!-- Return energy button -->
 			<div id="container-butt-return-energy" class="floating-block block-butt-return-energy">
 
 				<img id="button-return" class="button-img"
 					src="img/return_off.png" alt="house-1"> 
 
+			</div>
+			
+			<!-- Return title -->
+			<div id="block-text-return" class="floating-block lato-font">
+				<p id="text-return" class="lead">OUTLINE FUTURE CONSUMPTION</p>
+				<p id="text_harvester-1-txt" class="helvetica-font">The utility company could adjust <br> the loads in order to improve <br> efficiency.</p>
 			</div>
 
 
@@ -172,54 +226,6 @@
 
 		</div>
 
-<!-- 		<div class="container row text-center" -->
-<!-- 			style="display: table; margin: 0 auto;"> -->
-
-<!-- 			<!-- Messages space --> 
-<!-- 			<div class="col-lg-offset-2 col-lg-12 mx-auto" -->
-<!-- 				style="display: table; margin: 0 auto;"> -->
-
-<!-- 				<div id="info-z3" class="col-lg-2" -->
-<!-- 					style="float: right; background: black;"> -->
-
-<!-- 					<h2>ZONE 3</h2> -->
-<!-- 					<p class="lead">Energy consumption</p> -->
-
-<!-- 					<div id="energy-bar-z3" name="energy-z3"></div> -->
-
-<!-- 					<p class="lead">20%</p> -->
-
-<!-- 				</div> -->
-
-<!-- 				<div id="info-z2" class="col-lg-2" -->
-<!-- 					style="float: right; background: black;"> -->
-
-<!-- 					<h2>ZONE 2</h2> -->
-<!-- 					<p class="lead">Energy consumption</p> -->
-
-<!-- 					<div id="energy-bar-z2" name="energy-z2"></div> -->
-
-<!-- 					<p class="lead">15%</p> -->
-
-<!-- 				</div> -->
-
-<!-- 				<div id="info-z1" class="col-lg-2" -->
-<!-- 					style="float: right; background: black;"> -->
-
-<!-- 					<h2>ZONE 1</h2> -->
-<!-- 					<p class="lead">Energy consumption</p> -->
-
-<!-- 					<div id="energy-bar-z1" name="energy-z1"></div> -->
-
-<!-- 					<p class="lead">40%</p> -->
-
-<!-- 				</div> -->
-
-<!-- 			</div> -->
-
-<!-- 		</div> -->
-
-	<!-- /.container -->
 	</section>
 
 	<!-- About -->
