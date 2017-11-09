@@ -106,6 +106,14 @@
 	width: 13%;	
 }
 
+#block-prediction-source{
+	top: 15%;
+	right: 7%;
+	color: #fefefe;
+	width: 17%;	
+}
+
+
 #block-energy-houses{
 	top: 29.8%;
 	left: 24%;
@@ -183,7 +191,7 @@
 	width: 17%;
 	top: 26%;
 	left: 20%;
-	transform: rotate(90deg);
+	transform: rotate(270deg);
 }
 
 /* Text rules*/
