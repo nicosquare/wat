@@ -135,6 +135,7 @@ $(document).ready(function() {
 		$("#button-send-energy").attr("src", "img/send_energy_on.png");
 		$("#house-alt").attr("src", "img/house_alt_on.png");
 
+		transferEnergy("ADD_1","ADD_2",20);
 		updateHouseSlider();
 
 		var timer = setTimeout(function() {
@@ -149,6 +150,8 @@ $(document).ready(function() {
 	$("#button-send-ibm").click(function() {
 
 		$("#button-send-ibm").attr("src", "img/send_to_ibm_on.png");
+
+		sendProfile("ADD_1","ADDC_1","PROF_1");
 
 		$('html, body').animate({
 			scrollTop: $("#block-text-return").offset().top
@@ -290,42 +293,15 @@ function init(){
 	stored_power[0] = getHousesStoredEnergy("ADD_1");
 	stored_power[1] = getHousesStoredEnergy("ADD_2");
 	
-	var p_energy_h1 = 1;
-	var p_energy_h2 = 0;
+	var p_energy_h1 = stored_power[0]/100;
+	var p_energy_h2 = stored_power[1]/100;
 	
 	energy_bar_house_p.animate(p_energy_h1);
 	energy_bar_house_alt.animate(p_energy_h2);
 	
-	$("#energy-h1").text("100\n%");
-	$("#energy-h2").text("0\n%");
+	$("#energy-h1").text(parseFloat(p_energy_h1*100).toFixed(2)+"\n%");
+	$("#energy-h2").text(parseFloat(p_energy_h2*100).toFixed(2)+"\n%");
 	
-}
-
-function getHousesStoredEnergy(houseAddress){
-	
-	var oReq = new XMLHttpRequest();
-	var storedEnergy = 0;
-    
-    oReq.open('GET', 'http://148.100.98.44:3000/api/com.biz.House/'+houseAddress, false);
-    
-    oReq.onload = function(oEvent){
-		
-        if (oReq.status == 200){
-            
-			var jsonResponse = JSON.parse(oReq.responseText);
-
-			storedEnergy = jsonResponse.storedPower;
-
-        } else {
-          
-			alert("Problem with the request");
-          
-        }
-    };
-    
-    oReq.send();
-    
-    return storedEnergy;
 }
 
 
@@ -396,13 +372,140 @@ function updateSliderZ3(onoff){
 
 function updateHouseSlider(){
 	
-	energy_bar_house_p.animate(0.8);
-	energy_bar_house_alt.animate(0.2);
+	var newStoredEnergyH1 = getHousesStoredEnergy("ADD_1");
+	var newStoredEnergyH2 = getHousesStoredEnergy("ADD_2");
 	
-	$("#energy-h1").text("80\n%");
-	$("#energy-h2").text("20\n%");
+	var perEnergyH1 = percentCalculation(newStoredEnergyH1,100);
+	var perEnergyH2 = percentCalculation(newStoredEnergyH2,100);
+	
+	energy_bar_house_p.animate(perEnergyH1);
+	energy_bar_house_alt.animate(perEnergyH2);
+	
+	$("#energy-h1").text(parseFloat(perEnergyH1*100).toFixed(2)+"\n%");
+	$("#energy-h2").text(parseFloat(perEnergyH2*100).toFixed(2)+"\n%");
 	
 } 
+
+/* BC function
+ * */
+
+// Query the stored energy of a house by its Id (address)
+
+function getHousesStoredEnergy(houseAddress){
+	
+	var oReq = new XMLHttpRequest();
+	var storedEnergy = 0;
+    
+    oReq.open('GET', 'http://148.100.98.44:3000/api/com.biz.House/'+houseAddress, false);
+    
+    oReq.onload = function(oEvent){
+		
+        if (oReq.status == 200){
+            
+			var jsonResponse = JSON.parse(oReq.responseText);
+
+			storedEnergy = jsonResponse.storedPower;
+
+        } else {
+          
+			alert("Problem with the request of stored power");
+          
+        }
+    };
+    
+    oReq.send();
+    
+    return storedEnergy;
+}
+
+// Transfer energy from a house to another
+
+function transferEnergy(from,to,energy){
+	
+	var oReq = new XMLHttpRequest();
+	
+	var data = JSON.stringify({"powerAmount": energy, "from": from, "to": to});
+    
+    oReq.open('POST', 'http://148.100.98.44:3000/api/com.biz.PowerTransfer', false);
+    
+	oReq.setRequestHeader("Content-type", "application/json");
+    
+    oReq.onload = function(oEvent){
+		
+        if (oReq.status == 200){
+            
+			var jsonResponse = JSON.parse(oReq.responseText);
+			var transactionId = jsonResponse.transactionId;
+
+        } else {
+          
+			alert("Problem with energy transfer");
+          
+        }
+    };
+    
+    oReq.send(data);
+}
+
+
+// Send profile to company
+
+function sendProfile(from,to,profileId){
+	
+	var oReq = new XMLHttpRequest();
+	
+	var data = JSON.stringify({"from": from, "to": to, "profile": "resource:com.biz.PowerProfile#"+profileId});
+    
+    oReq.open('POST', 'http://148.100.98.44:3000/api/com.biz.ProfileSend', false);
+    
+	oReq.setRequestHeader("Content-type", "application/json");
+    
+    oReq.onload = function(oEvent){
+		
+        if (oReq.status == 200){
+            
+			var jsonResponse = JSON.parse(oReq.responseText);
+			var transactionId = jsonResponse.transactionId;
+
+        } else {
+          
+			alert("Problem with profile sending");
+          
+        }
+    };
+    
+    oReq.send(data);
+}
+
+// Return credit to client
+
+function creditReturn(from,to,credit){
+	
+	var oReq = new XMLHttpRequest();
+	
+	var data = JSON.stringify({"from": from, "to": to, "creditAmount": credit});
+    
+    oReq.open('POST', 'http://148.100.98.44:3000/api/com.biz.CreditReturn', false);
+    
+	oReq.setRequestHeader("Content-type", "application/json");
+    
+    oReq.onload = function(oEvent){
+		
+        if (oReq.status == 200){
+            
+			var jsonResponse = JSON.parse(oReq.responseText);
+			var transactionId = jsonResponse.transactionId;
+
+        } else {
+          
+			alert("Problem with credit returning");
+          
+        }
+    };
+    
+    oReq.send(data);
+}
+
 
 // Misc
 
