@@ -193,7 +193,7 @@ function init(){
 	
 	vprediction_zones = [0,0,0]; // KW - Z1 - Z2 - Z3
 	consumption_zones = [0,0,0]; // KW - Z1 - Z2 - Z3
-	stored_power = [150,30]; // KW - H1 - H2
+	stored_power = [0,0]; // KW - H1 - H2
 	consumed_by_zone = [0,0,0];
 	
 	
@@ -256,7 +256,7 @@ function init(){
 			$("#pred-time").text(formatAMPMPlus6());
 			$("#from-panel").show();
 			$("#from-grid").hide();
-		}, 5000);
+		}, 17000);
 		
 	});
 	
@@ -287,6 +287,9 @@ function init(){
 	
 	// House
 	
+	stored_power[0] = getHousesStoredEnergy("ADD_1");
+	stored_power[1] = getHousesStoredEnergy("ADD_2");
+	
 	var p_energy_h1 = 1;
 	var p_energy_h2 = 0;
 	
@@ -296,25 +299,35 @@ function init(){
 	$("#energy-h1").text("100\n%");
 	$("#energy-h2").text("0\n%");
 	
-	// getHousesStoredEnergy();
-	
 }
 
-function getHousesStoredEnergy(){
+function getHousesStoredEnergy(houseAddress){
 	
-	var URL = "http://148.100.98.44:3000/api/com.biz.Company/ADDC_1";
-
-    var xmlhttp = new XMLHttpRequest();
+	var oReq = new XMLHttpRequest();
+	var storedEnergy = 0;
     
-    xmlhttp.onreadystatechange = function(resp){
-    	
-    	alert(resp.status);
-    	
+    oReq.open('GET', 'http://148.100.98.44:3000/api/com.biz.House/'+houseAddress, false);
+    
+    oReq.onload = function(oEvent){
+		
+        if (oReq.status == 200){
+            
+			var jsonResponse = JSON.parse(oReq.responseText);
+
+			storedEnergy = jsonResponse.storedPower;
+
+        } else {
+          
+			alert("Problem with the request");
+          
+        }
     };
-    xmlhttp.open("GET", URL, false);
-    xmlhttp.send();
-    	
+    
+    oReq.send();
+    
+    return storedEnergy;
 }
+
 
 // Update sliders
 
