@@ -11,6 +11,6 @@ This business network defines:
 `House` `Company` `PowerProfile` `Room`
 
 **Transactions**
-`PowerTransfer` `MonthlyPowerAssignment` `ProfileSend`
+`PowerTransfer` `ProfileSend` `ReturnEnergy` `ReturnCompensation` 
 
 The PowerProfiles contain a key that provides access to more detailed info about the energy consumption in a House, only the CompanySupervisor and the HomeOwner could access this info.

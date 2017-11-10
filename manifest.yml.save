@@ -1,0 +1,17 @@
+---
+applications:
+ - name: wat
+   random-route: true
+   path: target/wat.war
+   memory: 256M
+   instances: 1
+image: nmcuadrado/wat:latest
+manifests:
+  - image: :latest
+    platform:
+      architecture: amd64
+      os: linux
+  - image: armhf/debian:latest
+    platform:
+      architecture: arm
+      os: linux
