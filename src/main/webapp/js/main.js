@@ -189,6 +189,8 @@ $(document).ready(function() {
 // Initialization function
 function init(){
 	
+	base_url = 'http://148.100.5.171:3000';
+	
 	$("#from-panel").hide();
 	$("#from-grid").show();
 	
@@ -396,7 +398,7 @@ function getHousesStoredEnergy(houseAddress){
 	var oReq = new XMLHttpRequest();
 	var storedEnergy = 0;
     
-    oReq.open('GET', 'http://148.100.98.44:3000/api/com.biz.House/'+houseAddress, false);
+    oReq.open('GET', base_url+'/api/com.biz.House/'+houseAddress, false);
     
     oReq.onload = function(oEvent){
 		
@@ -426,7 +428,7 @@ function transferEnergy(from,to,energy){
 	
 	var data = JSON.stringify({"powerAmount": energy, "from": from, "to": to});
     
-    oReq.open('POST', 'http://148.100.98.44:3000/api/com.biz.PowerTransfer', false);
+    oReq.open('POST', base_url+'/api/com.biz.PowerTransfer', false);
     
 	oReq.setRequestHeader("Content-type", "application/json");
     
@@ -456,7 +458,7 @@ function sendProfile(from,to,profileId){
 	
 	var data = JSON.stringify({"from": from, "to": to, "profile": "resource:com.biz.PowerProfile#"+profileId});
     
-    oReq.open('POST', 'http://148.100.98.44:3000/api/com.biz.ProfileSend', false);
+    oReq.open('POST', base_url+'/api/com.biz.ProfileSend', false);
     
 	oReq.setRequestHeader("Content-type", "application/json");
     
@@ -485,7 +487,7 @@ function creditReturn(from,to,credit){
 	
 	var data = JSON.stringify({"from": from, "to": to, "creditAmount": credit});
     
-    oReq.open('POST', 'http://148.100.98.44:3000/api/com.biz.CreditReturn', false);
+    oReq.open('POST', base_url+'/api/com.biz.CreditReturn', false);
     
 	oReq.setRequestHeader("Content-type", "application/json");
     
