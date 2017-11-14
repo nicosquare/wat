@@ -6,18 +6,20 @@ $(document).ready(function() {
 	
 	// Initialize the demo variables
 	
-	init();
+	//init();
 	
 	// Initialize actions on demo
 	
-	actionDefinition();
+	//actionDefinition();
 
 	// Test ML
 	
 	//getPredictionForMinute('180400', '0', '37', '16', '6.6666667');
 
+	testPredictionForMinute();
+	
 	// Test DB
 	
-	getAverageFromMinute("3600");
+	//getAverageFromMinute("3600");
 
 });
