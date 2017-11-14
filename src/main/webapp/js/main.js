@@ -14,6 +14,10 @@ $(document).ready(function() {
 
 	// Test ML
 	
-	getPredictionForMinute('180400', '0', '37', '16', '6.6666667');
+	//getPredictionForMinute('180400', '0', '37', '16', '6.6666667');
+
+	// Test DB
+	
+	getAverageFromMinute("3600");
 
 });
